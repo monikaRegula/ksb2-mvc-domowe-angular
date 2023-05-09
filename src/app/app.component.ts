@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
-import {EmpAddEditComponent} from "./vehicle/emp-add-edit/emp-add-edit.component";
+import {VehAddEditComponent} from "./vehicle/veh-add-edit/veh-add-edit.component";
 import {VehicleService} from "./vehicle/services/vehicle.service";
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -34,9 +34,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.getVehicles();
-    // console.log(this.getVehicles());
-    // this.dataSource = new MatTableDataSource(this.vehicles);
-
   }
 
   applyFilter(event: Event) {
@@ -48,12 +45,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  // openAddEmitEmpForm() {
-  //   this._dialog.open(EmpAddEditComponent);
-  // }
-
   openAddEmitEmpForm() {
-    const dialogRef = this._dialog.open(EmpAddEditComponent);
+    const dialogRef = this._dialog.open(VehAddEditComponent);
     dialogRef.afterClosed().subscribe({
       next: (val) => {
         if (val) {
@@ -66,7 +59,7 @@ export class AppComponent implements OnInit {
   getVehicles() {
     this._vehService.getVehicles().subscribe({
       next: (res) => {
-        console.log(res);
+        console.log('getVehicles : ' +res);
         this.vehicles = res;
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.sort = this.sort;
@@ -80,14 +73,6 @@ export class AppComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-
-  // getVehicleById(id: number) {
-  //   this._vehService.getVehicleById(id).subscribe(
-  //     vehicle => {
-  //       this.vehicle = vehicle;
-  //       console.log()
-  //     });
-  // }
 
   addVehicle(vehicle: Object) {
     this._vehService.addVehicle(vehicle).subscribe();
@@ -104,7 +89,8 @@ export class AppComponent implements OnInit {
   deleteVehicle(id: number) {
     this._vehService.deleteVehicle(id).subscribe({
       next: (res)=> {
-        this.getVehicles();
+        console.log(this.vehicles)
+      this.getVehicles();
     alert('Vehicle deleted!')
     },
       error: console.log,
@@ -112,7 +98,7 @@ export class AppComponent implements OnInit {
   }
 
   openEditForm(data: any) {
-    const dialogRef = this._dialog.open(EmpAddEditComponent, {
+    const dialogRef = this._dialog.open(VehAddEditComponent, {
       data,
     });
 
