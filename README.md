@@ -1,27 +1,32 @@
 # Ksb2MvcDomoweAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+Moduł 4: Rozbuduj swoją aplikacje z poprzedniego tygodnia o interfejs graficzny, który umożliwi:
 
-## Development server
+- wyświetlanie wszystkich pozycji
+- pobieranie elementu po jego id
+- dodawanie pozycji
+- modyfikowanie pozycji
+- modyfikowanie jednego z pól pozycji
+- usuwania jednej pozycji
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+==================================================================================================
+Wykorzystane komponenty UI: 
+- MatForm
+- MatDialog
+- FormField
+- MatPaginator, MatSort, MatTableDataSource
 
-## Code scaffolding
+==================================================================================================
+Wyświetlanie wszystkich pozycji:
+![image](https://github.com/monikaRegula/ksb2-mvc-domowe-angular/assets/33186866/42caacac-29ee-4b8a-9f5a-8d8d84da1b23)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Dodawanie pozycji:
+![image](https://github.com/monikaRegula/ksb2-mvc-domowe-angular/assets/33186866/3ce1785e-8177-4f8f-9712-0976b3c92760)
 
-## Build
+Usuwanie pozycji:
+![image](https://github.com/monikaRegula/ksb2-mvc-domowe-angular/assets/33186866/6a68d2b0-c800-4740-811b-a1f0c1cd4c01)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Edytowanie pozycji:
+![image](https://github.com/monikaRegula/ksb2-mvc-domowe-angular/assets/33186866/e4c0497a-208a-42c5-9490-25e4ee03d39a)
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Skorzystano z pomocy tutoriala https://www.youtube.com/watch?v=4mKY_yDq64g
