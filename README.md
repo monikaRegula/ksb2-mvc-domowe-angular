@@ -9,7 +9,6 @@ Moduł 4: Rozbuduj swoją aplikacje z poprzedniego tygodnia o interfejs graficzn
 - modyfikowanie jednego z pól pozycji
 - usuwania jednej pozycji
 
-==================================================================================================
 Backend: https://github.com/monikaRegula/ksb2-modul-3-RestApi-domowe/tree/mvc_4_domowe
 ==================================================================================================
 Wykorzystane komponenty UI: 
