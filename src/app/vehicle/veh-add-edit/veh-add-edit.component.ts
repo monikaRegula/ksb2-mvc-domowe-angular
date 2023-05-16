@@ -20,7 +20,8 @@ export class VehAddEditComponent implements OnInit {
       id: '',
       mark: '',
       model: '',
-      color: ''
+      color: '',
+      productionDate: ''
     })
   }
 

@@ -3,4 +3,5 @@ export class Vehicle{
   mark?:string;
   model?:string;
   color?:string;
+  productionDate?:string;
 }

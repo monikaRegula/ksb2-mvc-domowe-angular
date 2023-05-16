@@ -6,6 +6,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {Vehicle} from "./model/vehicle";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit {
     'mark',
     'model',
     'color',
-    'action'
+    'productionDate'
   ];
 
   dataSource: MatTableDataSource<Vehicle>;
