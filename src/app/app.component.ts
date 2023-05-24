@@ -6,7 +6,6 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import {Vehicle} from "./model/vehicle";
-import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -26,6 +25,8 @@ export class AppComponent implements OnInit {
 
   vehicles: Array<Vehicle> = null;
   vehicle: Vehicle;
+  start: number;
+  end: number;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -35,15 +36,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.getVehicles();
-  }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
   }
 
   openAddEmitEmpForm() {
@@ -109,6 +101,27 @@ export class AppComponent implements OnInit {
           this.getVehicles();
         }
       },
+    });
+  }
+
+  test(event, mc){
+    this.start = mc.inputFieldValue;
+  }
+
+  test2(event, mc){
+    this.end = mc.inputFieldValue;
+  }
+
+  filterByDateRange(){
+    this._vehService.getVehiclesByProductionYearRange(this.start,this.end).subscribe({
+      next: (res) => {
+        console.log('filterVehicles : ' +res);
+        this.vehicles = res;
+        this.dataSource = new MatTableDataSource(res);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+      },
+      error: (err) => console.log(err)
     });
   }
 

@@ -45,4 +45,8 @@ export class VehicleService {
     return this.http.patch(`${this.baseUrl}/id/${id}/color/${color}`, httpOptions);
   }
 
+  getVehiclesByProductionYearRange(start: number, end: number){
+    return this.http.get<Array<Vehicle>>(`${this.baseUrl}/start/${start}/end/${end}`, httpOptions);
+  }
+
 }

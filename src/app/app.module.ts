@@ -15,6 +15,8 @@ import {MatNativeDateModule} from "@angular/material/core";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatSortModule} from "@angular/material/sort";
 import {MatTableModule} from "@angular/material/table";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {CalendarModule} from "primeng/calendar";
 
 
 @NgModule({
@@ -38,6 +40,8 @@ import {MatTableModule} from "@angular/material/table";
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatDatepickerModule,
+    CalendarModule,
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
