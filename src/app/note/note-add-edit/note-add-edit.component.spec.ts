@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VehAddEditComponent } from './veh-add-edit.component';
+import { NoteAddEditComponent } from './note-add-edit.component';
 
 describe('EmpAddEditComponent', () => {
-  let component: VehAddEditComponent;
-  let fixture: ComponentFixture<VehAddEditComponent>;
+  let component: NoteAddEditComponent;
+  let fixture: ComponentFixture<NoteAddEditComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [VehAddEditComponent]
+      declarations: [NoteAddEditComponent]
     });
-    fixture = TestBed.createComponent(VehAddEditComponent);
+    fixture = TestBed.createComponent(NoteAddEditComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
